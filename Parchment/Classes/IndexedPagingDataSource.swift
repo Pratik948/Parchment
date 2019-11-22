@@ -13,10 +13,10 @@ class IndexedPagingDataSource<T: PagingItem>:
     guard let index = items.firstIndex(of: item as! T) else {
       fatalError("pagingViewController:viewControllerForPagingItem: PagingItem does not exist")
     }
-    guard let viewController = viewControllerForIndex?(index) else {
-       fatalError("pagingViewController:viewControllerForPagingItem: No view controller exist for PagingItem")
-    }
-    
+//     guard let viewController = viewControllerForIndex?(index) else {
+//        fatalError("pagingViewController:viewControllerForPagingItem: No view controller exist for PagingItem")
+//     }
+    let viewController = viewControllerForIndex?(index) ?? UIViewController()    
     return viewController
   }
   
